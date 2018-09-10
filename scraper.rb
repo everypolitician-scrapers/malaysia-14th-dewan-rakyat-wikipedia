@@ -25,7 +25,7 @@ class MembersPage < Scraped::HTML
   private
 
   def members_tables
-    noko.xpath('//table[.//th[contains(.,"Coalition")]]')
+    noko.xpath('//table[.//th[contains(.,"Constituency")]]')
   end
 end
 
