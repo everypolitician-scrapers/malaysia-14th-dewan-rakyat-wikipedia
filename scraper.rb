@@ -98,7 +98,8 @@ def data_for(url)
   Scraped::Scraper.new(url => MembersPage).scraper.members
 end
 
-data = data_for('https://en.wikipedia.org/wiki/Members_of_the_Dewan_Rakyat,_13th_Malaysian_Parliament') +
+data = data_for('https://en.wikipedia.org/wiki/Members_of_the_Dewan_Rakyat,_12th_Malaysian_Parliament') +
+       data_for('https://en.wikipedia.org/wiki/Members_of_the_Dewan_Rakyat,_13th_Malaysian_Parliament') +
        data_for('https://en.wikipedia.org/wiki/Members_of_the_Dewan_Rakyat,_14th_Malaysian_Parliament')
 
 data.each { |mem| puts mem.reject { |_, v| v.to_s.empty? }.sort_by { |k, _| k }.to_h } if ENV['MORPH_DEBUG']
